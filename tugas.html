@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="/assets/revou-removebg-preview.png" 
+        alt="Revoulogo" class="logo">
+        <div class="nav-bar">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Our Profile</div>
+            <div class="nav-item">Portofolio</div>
+            <div class="nav-item">Message Us</div>
+        </div>
+    </header>
+    <div id="hero" class="hero">
+        <h1>Hi, Rafli. Welcome To Website</h1>
+        <h2>Ini adalah Website Latihan Pertama</h2>
+        <hr />
+        <p style="text-align: center">Siapa itu RevoU? RevoU ini adalah sekolah online (EdTech) yang membekali para murid dengan keterampilan digital yang lagi in-demand di zaman industri teknologi 4.0 saat ini. Sampai sekarang, RevoU udah berhasil bantuin 10.000+ alumni utk mendapatkan karir impian, maupun mengembangkan bisnis mereka di bidang digital!</p>
+    </div>
+
+    <div id="headquarters-section">
+        <h1>Our Headquarters</h1>
+        <hr/>
+        <div class="wrapper">
+
+        <div class="headquarters-image-container">
+            <div class="headquarters-image-jakarta"></div>
+            <p>Jakarta</p>
+        </div>
+        <div class="headquarters-image-container">
+            <div class="headquarters-image-bandung"></div>
+            <p>Bandung</p>
+        </div>   
+        <div class="headquarters-image-container">
+            <div class="headquarters-image-surabaya"></div>
+            <p>Surabaya</p>
+        </div>
+        </div>
+    </div>
+    <hr/>
+    <div id="message-us-section" class="message-us">
+        <h1>Message Us</h1>
+        <form name="message-form" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td><input type="text" name="nama" placeholder="Masukkan Nama Lengkap" size="30"></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td>:</td>
+                    <td><input type="date" name="tanggal-lahir" size="30"></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin </td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" 
+                        name="gender" 
+                        value="Laki-laki">Laki-laki</input>
+                        <input type="radio" 
+                        name="gender" 
+                        value="Perempuan">Perempuan</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pesan</td>
+                    <td>:</td>
+                    <td>
+                        <textarea name="pesan" placeholder="Masukkan Pesan Anda"></textarea>
+                    </td>
+                </tr> 
+                <td>
+                    <button>Submit</button>
+                </td>
+            </table>
+        </form>
+        <script>
+            function validateForm(){
+                var nama = document.forms["message-form"]["nama"].value;
+                var date = document.forms["message-form"]["tanggal-lahir"].value;
+                var gender = document.forms["message-form"]["gender"].value;
+                var message = document.forms["message-form"]["pesan"].value;
+                
+                
+                document.getElementById("nama").innerText = nama;
+                document.getElementById("tanggal-lahir").innerText = date;
+                document.getElementById("gender").innerText = gender;
+                document.getElementById("pesan").innerText = message;
+                return false;
+            }
+        </script>
+        <hr/>
+        <div class="form-output">
+            <p>Nama: <span id="nama"></span></p>
+            <p>Tanggal Lahir: <span id="tanggal-lahir"></span></p>
+            <p>Jenis Kelamin: <span id="gender"></span></p>
+            <p>Pesan: <span id="pesan"></p>
+        </div>
+    </div>
+    <footer>Created By Rafli</footer>
+</body>
+</html>
